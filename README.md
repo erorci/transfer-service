@@ -25,3 +25,11 @@ After starting the application, the rendered documentation, in `HTML` format, ca
 
     $ docker-compose up --build -d
 
+### Checking container status docker
+
+    $. docker ps 
+
+    CONTAINER ID        IMAGE                         COMMAND                  CREATED             STATUS              PORTS                    NAMES
+    4d267d714815        transfer-service_springboot   "java -Dspring.data.…"   11 minutes ago      Up 6 minutes        0.0.0.0:8182->8080/tcp   transfer-service
+    32dfa7208425        mongo                         "docker-entrypoint.s…"   11 minutes ago      Up 6 minutes        27017/tcp                springboot-mongo
+
