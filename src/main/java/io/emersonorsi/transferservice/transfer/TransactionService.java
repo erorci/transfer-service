@@ -26,7 +26,7 @@ public class TransactionService {
 
         Account account = accountRepository
                 .findById(transaction.accountIdTo())
-                .orElseThrow(() -> new IllegalArgumentException("Account to Deposit could not be found"));
+                .orElseThrow(() -> new IllegalArgumentException("Account to deposit could not be found"));
 
         account.deposit(transaction.amount()).saveTo(accountRepository::save);
         return transaction.markFinished().saveTo(transactionRepository::save);

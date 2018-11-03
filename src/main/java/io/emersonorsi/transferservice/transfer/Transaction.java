@@ -36,6 +36,7 @@ public class Transaction extends AbstractAggregateRoot {
 
     public Transaction markFinished() {
         this.status = TransactionStatus.FINISHED;
+        System.out.println("Transaction: " + this.toString());
         return this;
     }
 

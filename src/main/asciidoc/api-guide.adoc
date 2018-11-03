@@ -1,0 +1,52 @@
+= _Transfer Service_ - API Guide
+Emerson Rodrigo Orci;
+v0.0.1-SNAPSHOT
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 3
+
+== Overview
+
+The purpose of this guide is to demonstrate how to use the `HTTP` application's endpoints.
+
+=== HTTP status codes
+|===
+  | Status code | Usage
+
+  | `200 OK`
+  | Standard response for successful HTTP requests.
+
+  | `201 Created`
+  | The request has been fulfilled, resulting in the creation of a new resource. The primary resource created by the request is identified by a Location header field in the response.
+
+
+|===
+
+=== Accounts
+
+To be able to use the features of the application, a user must have an `Account`.
+
+==== Creating an Account
+
+`*POST /api/account*`
+
+operation::mapping-post-account[snippets='http-request,request-fields,http-response']
+
+==== Listing Accounts
+
+A `GET` request fetches all `Accounts`.
+
+`*GET /api/account*`
+
+operation::mapping-get-accounts[snippets='http-request,http-response,response-fields']
+
+==== Transferring values between Accounts
+
+A `POST` creates a `*transaction*` to transfer a certain amount between `Accounts`. An account must have
+balance to transfer to another account.
+
+`*POST /api/account/{accountId}/transfer*`
+
+operation::transfer-post-account-transfer[snippets='http-request,request-fields,http-response']

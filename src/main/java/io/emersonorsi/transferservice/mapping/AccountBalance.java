@@ -35,6 +35,10 @@ public class AccountBalance {
         return of(this.value + amount);
     }
 
+    public Double value() {
+        return value;
+    }
+
     public void writeJson(JsonGenerator jsonGenerator) throws IOException {
         jsonGenerator.writeStringField("value", value.toString());
     }

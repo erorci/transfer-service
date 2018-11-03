@@ -61,6 +61,10 @@ public class Account {
         return this;
     }
 
+    public Double balance() {
+        return accountBalance != null ? accountBalance.value() : 0;
+    }
+
     public Account saveTo(UnaryOperator<Account> saveFunc) {
         return saveFunc.apply(this);
     }
