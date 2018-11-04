@@ -61,8 +61,8 @@ public class TransferControllerTests {
                                 .description("The URI Location of the created Transaction")),
                         requestFields(
                                 fieldWithPath("accountTo")
-                                        .description("Account where amount will be transfered"),
+                                        .description("Account where the money will be transfered"),
                                 fieldWithPath("amount")
-                                        .description("Value of the amount to transfer"))));
+                                        .description("Value of the amount of money to transfer"))));
     }
 }
